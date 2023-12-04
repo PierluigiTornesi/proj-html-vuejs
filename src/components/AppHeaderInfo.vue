@@ -13,15 +13,15 @@
     <section>
         <div class="container text-white">
             <div>
-                <p>Open Hours: Mon - Sat - 9:00 - 18:00</p>
+                <p><i class="fa-solid fa-clock"></i> Open Hours: Mon - Sat - 9:00 - 18:00</p>
             </div>
             <div>
                 <ul>
-                    <li><a href="">+1 (305) 1234-5678</a></li>
-                    <li><a href="">hello@example.com</a></li>
-                    <li><a href="">facebook</a></li>
-                    <li><a href="">twitter</a></li>
-                    <li><a href="">in</a></li>
+                    <li><a href=""><i class="fa-solid fa-phone"></i> +1 (305) 1234-5678</a></li>
+                    <li><a href=""><i class="fa-solid fa-envelope"></i> hello@example.com</a></li>
+                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -35,12 +35,13 @@
 .container{
     @include flex(row,space-between,center);
     height: 50px;
+    padding-top: 0.6rem;
 }
 
 ul{
     @include flex(row,space-between,center);
     list-style: none;
-    gap: 0.5rem;
+    gap: 1rem;
 
     a{
         text-decoration: none;

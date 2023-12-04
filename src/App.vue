@@ -24,5 +24,7 @@ import AppMain from './components/AppMain.vue';
 </template>
 
 <style lang="scss">
-  @use "./style/general.scss"
+  @use "./style/general.scss";
+  @import "@fortawesome/fontawesome-free/css/all.css";
+
 </style>

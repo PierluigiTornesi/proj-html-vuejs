@@ -13,7 +13,8 @@
     <section>
         <div class="hero-up container text-white">
             <div class=" mt-3">
-                <button class="btn btn-primary">NEXGEN</button>
+                <button class="btn half-button">NEX 
+                    <span class="text-white ">GEN</span> </button>
             </div>
             <div class="links mt-3">
             <ul>
@@ -22,7 +23,7 @@
                 <li><a href="">PROJECTS</a></li>
                 <li><a href="" class="special">PROCESS</a></li>
                 <li><a href="">TESTIMONIALS</a></li>
-                <li><a href="">p</a></li>
+                <li><a href=""><i class="fa-regular fa-user"></i></a></li>
                 <li>
                     <button class="btn colored-button text-white">GET IN TOUCH</button>
                 </li>
@@ -68,7 +69,7 @@ section{
 ul{
     @include flex(row,space-between,center);
     list-style: none;
-    gap: 0.4rem;
+    gap: 3rem;
 
     a{
         text-decoration: none;
@@ -97,6 +98,13 @@ p{
 
 .nocolor-button{
     border: 1px solid $FountainBlue;
+}
+
+.half-button{
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    color: $FountainBlue;
+    background-color: rgba($color: $BlueLagoon, $alpha: 0.2);
 }
 
 </style>
