@@ -1,6 +1,7 @@
 <script>
 import AppMainAbout from './AppMainAbout.vue';
 import AppMainAeP from './AppMainAeP.vue';
+import AppMainFeed from './AppMainFeed.vue';
 import AppMainListCard from './AppMainListCard.vue';
 import AppMainPM from './AppMainPM.vue';
 
@@ -9,7 +10,7 @@ import AppMainPM from './AppMainPM.vue';
     data() {
         return {};
     },
-    components: { AppMainListCard, AppMainAbout, AppMainAeP, AppMainPM }
+    components: { AppMainListCard, AppMainAbout, AppMainAeP, AppMainPM, AppMainFeed }
 }
 </script>
 
@@ -19,6 +20,7 @@ import AppMainPM from './AppMainPM.vue';
     <AppMainAbout />
     <AppMainAeP />
     <AppMainPM />
+    <AppMainFeed />
   </main>
 </template>
 
