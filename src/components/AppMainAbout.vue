@@ -28,7 +28,7 @@ import AppMainAboutCard from "./AppMainAboutCard.vue";
 </script>
 
 <template>
-  <section>
+  <section >
     <div>
         <div class="container">
             <div class="row">
@@ -39,7 +39,7 @@ import AppMainAboutCard from "./AppMainAboutCard.vue";
                         <span class="special">The</span> Company
                     </h2>
                     <p class="mt-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum exercitationem dolores quidem, eligendi suscipit ipsa! Ea, iusto suscipit! Et consequuntur nam harum voluptatum. Architecto quam earum error enim, obcaecati dolorum.</p>
-                    <div class="d-flex mt-4">
+                    <div class="d-flex">
                         <AppMainAboutCard v-for="infoTaken in infoAbouts" :info = infoTaken />
                     </div>
                     <div class="d-flex gap-3 mt-4">
@@ -91,6 +91,7 @@ span{
 .special{
     background-color: rgba($color: $FountainBlue, $alpha: 0.2);
     padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
 
 h2{

@@ -1,5 +1,6 @@
 <script>
 import AppMainAbout from './AppMainAbout.vue';
+import AppMainAeP from './AppMainAeP.vue';
 import AppMainListCard from './AppMainListCard.vue';
 
 
@@ -7,7 +8,7 @@ import AppMainListCard from './AppMainListCard.vue';
     data() {
         return {};
     },
-    components: { AppMainListCard, AppMainAbout }
+    components: { AppMainListCard, AppMainAbout, AppMainAeP }
 }
 </script>
 
@@ -15,6 +16,7 @@ import AppMainListCard from './AppMainListCard.vue';
   <main>
     <AppMainListCard />
     <AppMainAbout />
+    <AppMainAeP />
   </main>
 </template>
 
