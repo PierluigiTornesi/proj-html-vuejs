@@ -61,7 +61,7 @@
                     <a href="">
                         <img :src="(getImagePath(project.imagePath) )" alt="">
                     </a>
-                    <h4>Academic professional program in social media</h4>
+                    <h4>{{ project.descImage }}</h4>
                 </div>
             </div>
         </div>
