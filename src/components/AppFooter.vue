@@ -1,25 +1,40 @@
 <script>
+import AppFooterForm from './AppFooterForm.vue';
+
 
   export default{
-    data(){
-      return{
-        
-      }
-    }
-  }
+    data() {
+        return {};
+    },
+    components: { AppFooterForm }
+}
 </script>
 
 <template>
-  <footer>
-    <span>footer</span>
-  </footer>
+  <AppFooterForm />
+  <section>
+    <div class="container text-white">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <p>@ 2020 NEXGEN is Proudly Powered by <span>Codinac</span></p>
+  </div>
+  </section>
+
 </template>
 
 <style lang="scss" scoped>
   @use "../style/partials/mixin" as *;
     @use "../style/partials/variables" as *;
 
-    footer{
-      background-color: $Woodsmoke;
+    section{
+      background-color: $Shark;
+      
+      .container{
+        @include flex(row,space-between,center);
+        
+
+        span{
+          color: $FountainBlue;
+        }
+      }
     }
 </style>

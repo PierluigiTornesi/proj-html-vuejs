@@ -99,8 +99,7 @@
         width: 50%;
     }
     .row{
-        @include flex(row,center,center);
-        gap: 2rem;
+        @include flex(row,space-between,center);
         padding-bottom: 4rem;
     }
     .col-3{
