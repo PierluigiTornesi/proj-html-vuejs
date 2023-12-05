@@ -2,8 +2,43 @@
 
   export default{
     data() {
-        return {};
+        return {
+            links:[
+                "ALL","INSTITUTIONAL","SOCIAL","EVENTS","INNOVATION","ENVIRONMENT","TECHNOLOGY",
+            ],
+            projects:[
+                {
+                    imagePath:"project-1.jpg",
+                    descImage:"Academic professional program in social media",
+                },
+                {
+                    imagePath:"project-2.jpg",
+                    descImage:"President's speech at the annual meeting",
+                },
+                {
+                    imagePath:"project-3.jpg",
+                    descImage:"International business trip in Shanghai",
+                },
+                {
+                    imagePath:"project-4.jpg",
+                    descImage:"Technology workshop with education theme",
+                },
+                {
+                    imagePath:"project-5.jpg",
+                    descImage:"Donation of clothes and food to the partner NGO",
+                },
+                {
+                    imagePath:"project-6.jpg",
+                    descImage:"Confraternization of the procurement team",
+                },
+            ]
+        };
     },
+    methods:{
+        getImagePath(path){
+            return new URL(`../assets/img/${path}`, import.meta.url).href;
+        },
+    }
     
 }
 </script>
@@ -11,45 +46,22 @@
 <template>
     <section>
         <div class="container text-white">
-            <div class="text-center">
+            <div class="text-center p-3">
                 <span class="special">WE DO MORE FOR EVERYONE</span>
-                <h3>Actions & <span class="back">Projects</span></h3>
+                <h3 class="title">Actions & <span class="back">Projects</span></h3>
             </div>
             <div>
                 <ul>
-                    <li><a class="back" href="">ALL</a></li>
-                    <li><a href="">INSTITUTIONAL</a></li>
-                    <li><a href="">SOCIAL</a></li>
-                    <li><a href="">EVENTS</a></li>
-                    <li><a href="">INNOVATION</a></li>
-                    <li><a href="">ENVIRONMENT</a></li>
-                    <li><a href="">TECHNOLOGY</a></li>
+                    <li v-for="link in links">
+                        <a :class="link === 'ALL' ? 'back' : '' " href="">{{ link }}</a></li>
                 </ul>
             </div>
             <div class="row">
-                <div class="col-4">
-                    <img src="../assets/img/project-1.jpg" alt="">
+                <div class="col-4" v-for="project in projects">
+                    <a href="">
+                        <img :src="(getImagePath(project.imagePath) )" alt="">
+                    </a>
                     <h4>Academic professional program in social media</h4>
-                </div>
-                <div class="col-4">
-                    <img src="../assets/img/project-2.jpg" alt="">
-                    <h4>President's speech at the annual meeting</h4>
-                </div>
-                <div class="col-4">
-                    <img src="../assets/img/project-3.jpg" alt="">
-                    <h4>International business trip in Shanghai</h4>
-                </div>
-                <div class="col-4">
-                    <img src="../assets/img/project-4.jpg" alt="">
-                    <h4>Technology workshop with education theme</h4>
-                </div>
-                <div class="col-4">
-                    <img src="../assets/img/project-5.jpg" alt="">
-                    <h4>Donation of clothes and food to the partner NGO</h4>
-                </div>
-                <div class="col-4">
-                    <img src="../assets/img/project-6.jpg" alt="">
-                    <h4>Confraternization of the procurement team</h4>
                 </div>
             </div>
         </div>
@@ -63,12 +75,14 @@
     section{
         background-color: $Woodsmoke;
         width: 100%;
+        padding-bottom: 5rem;
     }
 
     ul{
         @include flex(row,center,center);
         list-style-type: none;
-        gap: 2rem;
+        gap: 4rem;
+        margin-top: 1rem;
 
         a{
             text-decoration: none;
@@ -77,12 +91,36 @@
     }
 
     .back{
-        background-color: $EbonyClay;
+        background-color: rgba($color: $BlueLagoon, $alpha: 0.6);
         padding: 0.3rem 0.5rem;
         border-radius: 5px;
     }
 
     .special{
         color: $FountainBlue;
+    }
+
+    .title{
+        margin-top: 2rem;
+        font-weight: bold;
+        font-size: 3rem;
+    }
+
+    .col-4{
+        position: relative;
+        padding: 1rem;
+
+        img{
+            border-radius: 5px;
+            filter: brightness(50%);
+        }
+
+        h4{
+            width: 90%;
+            position: absolute;
+            top:70%;
+            text-align: center;
+            font-weight: bold;
+        }
     }
 </style>
