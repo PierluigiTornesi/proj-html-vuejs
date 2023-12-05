@@ -1,10 +1,29 @@
 <script>
-
+import AppMainAboutCard from "./AppMainAboutCard.vue";
 
   export default{
     data() {
-        return {};
+        return {
+            infoAbouts:[
+                {
+                    number: 0,
+                    title:"Employees",
+                    desc:"Lorem, ipsum dolor sit amet."
+                },
+                {
+                    number: 0,
+                    title:"Partners",
+                    desc:"Lorem, ipsum dolor sit amet."
+                },
+                {
+                    number: 0,
+                    title:"Customers",
+                    desc:"Lorem, ipsum dolor sit amet."
+                }
+            ]
+        };
     },
+    components: { AppMainAboutCard }
 }
 </script>
 
@@ -13,31 +32,17 @@
     <div>
         <div class="container">
             <div class="row">
-                <div class="col-4"></div>
-                <div class="col-8">
-                    <span class="">ABOUT THE NETWORK</span>
-                    <h2 class="fw-bold">
+                <div class="col-5"></div>
+                <div class="col-6">
+                    <span class="fw-bolder">ABOUT THE NETWORK</span>
+                    <h2 class="fw-bold mt-4 ">
                         <span class="special">The</span> Company
                     </h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum exercitationem dolores quidem, eligendi suscipit ipsa! Ea, iusto suscipit! Et consequuntur nam harum voluptatum. Architecto quam earum error enim, obcaecati dolorum.</p>
-                    <div class="d-flex">
-                        <ul>
-                            <li><span>0</span></li>
-                            <li><h5>Employess</h5></li>
-                            <li>Lorem, ipsum dolor sit amet.</li>
-                        </ul>
-                        <ul>
-                            <li><span>0</span></li>
-                            <li><h5>Employess</h5></li>
-                            <li>Lorem, ipsum dolor sit amet.</li>
-                        </ul>
-                        <ul>
-                            <li><span>0</span></li>
-                            <li><h5>Employess</h5></li>
-                            <li>Lorem, ipsum dolor sit amet.</li>
-                        </ul>
+                    <p class="mt-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum exercitationem dolores quidem, eligendi suscipit ipsa! Ea, iusto suscipit! Et consequuntur nam harum voluptatum. Architecto quam earum error enim, obcaecati dolorum.</p>
+                    <div class="d-flex mt-4">
+                        <AppMainAboutCard v-for="infoTaken in infoAbouts" :info = infoTaken />
                     </div>
-                    <div class="d-flex gap-3">
+                    <div class="d-flex gap-3 mt-4">
                         <a class="colored-button text-white" href="">GET IN TOUCH</a>
                         <a class="nocolor-button" href="">READ MORE</a>
                     </div>
@@ -64,26 +69,32 @@
     }
 
 .colored-button{
-    background-color: $FountainBlue;
-    border-color: $FountainBlue;
+    background-color: $BlueLagoon;
+    border-color: $BlueLagoon;
     padding: 0.5rem 1.2rem;
     border-radius: 5px;
     text-decoration: none;
 }
 
 .nocolor-button{
-    border: 1px solid $FountainBlue;
-    color: $FountainBlue;
+    border: 1px solid $BlueLagoon;
+    color: $BlueLagoon;
     padding: 0.5rem 1.2rem;
     border-radius: 5px;
     text-decoration: none;
 }
 
 span{
-    color: $FountainBlue;
+    color: $BlueLagoon;
 }
 
 .special{
-    background-color: rgba($color: $FountainBlue, $alpha: 0.3);
+    background-color: rgba($color: $FountainBlue, $alpha: 0.2);
+    padding: 0.5rem 1rem;
 }
+
+h2{
+    font-size: 3rem;
+}
+
 </style>
