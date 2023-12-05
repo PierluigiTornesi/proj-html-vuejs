@@ -5,7 +5,36 @@ import AppHeaderInfo from './AppHeaderInfo.vue';
 
   export default{
     data() {
-        return {};
+        return {
+          infos:[
+            {
+              classIcon:"fa-solid fa-phone",
+              text:"+1 (305) 1234-5678",
+            },
+            {
+              classIcon:"fa-solid fa-envelope",
+              text:"hello@example.com",
+            },
+            {
+              classIcon:"fa-brands fa-facebook-f",
+              text:"",
+            },
+            {
+              classIcon:"fa-brands fa-twitter",
+              text:"",
+            },
+            {
+              classIcon:"fa-brands fa-linkedin-in",
+              text:"",
+            }
+          ],
+          info:{
+            dayStart:"Mon",
+            dayOff:"Sat",
+            hourStart:"9:00",
+            hourOff:"18:00"
+          }
+        };
     },
     components: { AppHeaderInfo, AppHeaderHero }
 }
@@ -13,7 +42,7 @@ import AppHeaderInfo from './AppHeaderInfo.vue';
 
 <template>
   <section class="info">
-    <AppHeaderInfo />
+    <AppHeaderInfo :links = infos  :info = info />
   </section>
   <section class="hero">
     <AppHeaderHero />

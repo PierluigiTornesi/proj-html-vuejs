@@ -1,17 +1,20 @@
 <script>
+import AppMainAbout from './AppMainAbout.vue';
+import AppMainListCard from './AppMainListCard.vue';
+
 
   export default{
-    data(){
-      return{
-        
-      }
-    }
-  }
+    data() {
+        return {};
+    },
+    components: { AppMainListCard, AppMainAbout }
+}
 </script>
 
 <template>
   <main>
-    <h1>Questo é il main</h1>
+    <AppMainListCard />
+    <AppMainAbout />
   </main>
 </template>
 

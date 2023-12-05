@@ -1,31 +1,39 @@
 <script>
+import AppHeaderHeroLink from './AppHeaderHeroLink.vue';
+
 
   export default{
-    data(){
-      return{
-        
-      }
-    }
-  }
+    data() {
+        return {
+            links: [
+                "HOME",
+                "ABOUT",
+                "PROJECTS",
+                "PROCESS",
+                "TESTIMONIALS"
+            ]
+        };
+    },
+    components: { AppHeaderHeroLink }
+}
 </script>
 
 <template>
     <section>
         <div class="hero-up container text-white">
             <div class=" mt-3">
-                <button class="btn half-button">NEX 
-                    <span class="text-white ">GEN</span> </button>
+                <a class="text-white half-button" href="">
+                    <span >N E X</span> G E N
+                </a>
             </div>
             <div class="links mt-3">
             <ul>
-                <li><a href="">HOME</a></li>
-                <li><a href="">ABOUT</a></li>
-                <li><a href="">PROJECTS</a></li>
-                <li><a href="" class="special">PROCESS</a></li>
-                <li><a href="">TESTIMONIALS</a></li>
+                <li v-for="link in links">
+                    <AppHeaderHeroLink :linkHero = link />
+                </li>
                 <li><a href=""><i class="fa-regular fa-user"></i></a></li>
                 <li>
-                    <button class="btn colored-button text-white">GET IN TOUCH</button>
+                    <a class=" colored-button text-white" href="">GET IN TOUCH</a>
                 </li>
             </ul>
         </div>
@@ -42,8 +50,8 @@
             <p>Planning,recruitment and selection process and performance evaluation of employess.</p>
         </div>
         <div class="d-flex gap-3">
-            <button class="btn colored-button text-white">GET IN TOUCH</button>
-            <button class="btn nocolor-button text-white">READ MORE</button>
+            <a class="colored-button text-white" href="">GET IN TOUCH</a>
+            <a class="nocolor-button text-white" href="">READ MORE</a>
         </div>
     </div>
     </section>
@@ -94,17 +102,35 @@ p{
 
 .colored-button{
     background-color: $FountainBlue;
+    border-color: $FountainBlue;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
 .nocolor-button{
     border: 1px solid $FountainBlue;
+    color: $FountainBlue;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
 .half-button{
-    padding: 0.5rem 1.5rem;
     border-radius: 20px;
-    color: $FountainBlue;
-    background-color: rgba($color: $BlueLagoon, $alpha: 0.2);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    
+    span{
+        color: $FountainBlue;
+        background-color: rgba($color: $BlueLagoon, $alpha: 0.2);
+        padding-left: 1.5rem;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
 }
 
 </style>
