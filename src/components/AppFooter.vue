@@ -11,11 +11,15 @@
 
 <template>
   <footer>
-    <h1>Questo é il footer</h1>
+    <span>footer</span>
   </footer>
 </template>
 
 <style lang="scss" scoped>
   @use "../style/partials/mixin" as *;
     @use "../style/partials/variables" as *;
+
+    footer{
+      background-color: $Woodsmoke;
+    }
 </style>
